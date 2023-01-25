@@ -19,7 +19,7 @@
         </div>
     </nav>
     <div class="flex container mx-auto items-center h-full">
-        <div class="flex flex-col w-1/3 items-start">
+        <div class="flex flex-col items-start">
             <h1 class="text-white font-bold text-5xl leading-tight mb-4">
                 Simple generic landing page to subscribe
             </h1>
