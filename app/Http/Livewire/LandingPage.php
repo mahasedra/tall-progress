@@ -16,6 +16,8 @@ class LandingPage extends Component
     protected $rules = [
         'email' => 'required|email:filter|unique:subscribers,email',
     ];
+    public $showSubscribe = false;
+    public $showSuccess = false;
 
     public function subscribe()
     {
@@ -40,6 +42,8 @@ class LandingPage extends Component
             $subscriber->notify($notification);
         }, $deadlockRestries = 5);
         $this->reset('email');
+        $this->showSubscribe = false;
+        $this->showSuccess = true;
     }
     public function render()
     {
