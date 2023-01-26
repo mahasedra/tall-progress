@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Subscriber;
 use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
@@ -18,6 +19,13 @@ class LandingPage extends Component
     ];
     public $showSubscribe = false;
     public $showSuccess = false;
+
+    public function mount(Request $request)
+    {
+        if ($request->has('verified') && $request->verified == 1) {
+            $this->showSuccess = true;
+        }
+    }
 
     public function subscribe()
     {
